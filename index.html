@@ -5275,7 +5275,7 @@ function cardHTML(v, cta, style){
   const imgs = v.images.slice(0, 5);
   if (style === 'compact') return `<article class="card compact" data-id="${v.id}" tabindex="0" aria-label="${esc(v.title + ' ' + v.sub)}">
     <div class="cm">
-      <div class="cm-track">${imgs.map((k,i) => `<img src="${IMG(k)}" alt="${esc(v.title)} ${esc(v.colour)}, photo ${i+1}" ${i?'loading="lazy"':''} draggable="false">`).join('')}</div>
+      <div class="cm-track">${imgs.map((k,i) => `<img src="${IMG(k)}" alt="${esc(v.title)} ${esc(v.colour)}, photo ${i+1}" loading="lazy" decoding="async" draggable="false">`).join('')}</div>
       <button class="cm-arrow prev" aria-label="Previous photo">${ic.l}</button>
       <button class="cm-arrow next" aria-label="Next photo">${ic.r}</button>
       <div class="cm-dots" aria-hidden="true">${imgs.map((_,i) => `<i class="${i?'':'on'}"></i>`).join('')}</div>
@@ -5285,7 +5285,7 @@ function cardHTML(v, cta, style){
   </article>`;
   return `<article class="card ${cols3(v)?'card-tight':''}" data-id="${v.id}" tabindex="0" aria-label="${esc(v.title + ' ' + v.sub)}">
     <div class="cm">
-      <div class="cm-track">${imgs.map((k,i) => `<img src="${IMG(k)}" alt="${esc(v.title)} ${esc(v.colour)}, photo ${i+1}" ${i?'loading="lazy"':''} draggable="false">`).join('')}</div>
+      <div class="cm-track">${imgs.map((k,i) => `<img src="${IMG(k)}" alt="${esc(v.title)} ${esc(v.colour)}, photo ${i+1}" loading="lazy" decoding="async" draggable="false">`).join('')}</div>
       <button class="cm-arrow prev" aria-label="Previous photo">${ic.l}</button>
       <button class="cm-arrow next" aria-label="Next photo">${ic.r}</button>
       <div class="cm-dots" aria-hidden="true">${imgs.map((_,i) => `<i class="${i?'':'on'}"></i>`).join('')}</div>
