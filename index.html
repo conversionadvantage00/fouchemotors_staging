@@ -124,7 +124,7 @@ main{padding-block:28px 64px}
    119 nested scroll areas = 500+ graphics layers, which made click-and-drag on the rails lag. Touch screens keep swiping. */
 @media (hover:hover) and (pointer:fine){.cm-track{overflow-x:hidden}}
 /* soft lazy images: the spot shows a matching tone, the photo fades in once fully decoded */
-img.lz{opacity:0;transition:opacity .35s ease}
+img.lz{opacity:0}   /* fade removed 13 Oct (testing carousel drag lag): the photo appears once fully decoded */
 img.lz.in{opacity:1}
 @media (prefers-reduced-motion:reduce){img.lz{transition:none}}
 .cm-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:center;display:block;-webkit-user-drag:none;user-select:none}
