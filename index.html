@@ -645,7 +645,7 @@ input[type=range]{width:100%;accent-color:var(--ink);height:24px}
 
 /* banners */
 .pg-bnr{position:relative;margin:36px var(--gutter) 8px;border-radius:var(--r-card);overflow:hidden;min-height:clamp(432px,45.9vw,621px);display:flex;align-items:flex-end;color:#fff;background:#000;isolation:isolate}
-.pg-bnr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.pg-bnr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .pg-bnr::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.86) 0%,rgba(0,0,0,.5) 45%,rgba(0,0,0,0) 78%),linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.5))}
 .pg-bnr-in{padding:36px clamp(22px,4vw,48px);max-width:560px;display:grid;gap:12px;justify-items:start}
 .pg-bnr h2{margin:0;font-size:clamp(26px,3.6vw,44px);line-height:1.04;font-weight:700;font-stretch:118%;text-wrap:balance}
@@ -1379,7 +1379,8 @@ main{padding-block:0 64px}
         "title": "Maranello, in Sandton",
         "text": "Fourteen Ferraris on the floor, from the 458 Italia to the SF90 Spider.",
         "cta": "See the Ferraris",
-        "href": "#ferrari"
+        "href": "#ferrari",
+        "imageWide": "site/banner-ferrari-wide.jpg"
       },
       {
         "before": "g-63",
@@ -1387,7 +1388,8 @@ main{padding-block:0 64px}
         "title": "The G 63 specialists",
         "text": "Fifteen G 63s in stock, most at delivery mileage.",
         "cta": "See every G 63",
-        "href": "#g-63"
+        "href": "#g-63",
+        "imageWide": "site/banner-g63-wide.jpg"
       },
       {
         "before": "icons",
@@ -1395,7 +1397,8 @@ main{padding-block:0 64px}
         "title": "Selling your car?",
         "text": "Tell us about the car you drive now and we’ll come back to you with a trade-in value.",
         "cta": "Value my car",
-        "form": "tradein"
+        "form": "tradein",
+        "imageWide": "site/banner-porsche-wide.jpg"
       }
     ],
     "services": {
@@ -5713,7 +5716,7 @@ if (PG.hero && (PG.hero.video || PG.hero.poster)) {
 /* banners: rendered with the sections (see below) */
 function bannerHTML(b){
   return `<section class="pg-bnr" aria-label="${esc(b.title)}">
-    ${LZ(b.image, 'site', 'alt=""')}
+    ${LZ((b.imageWide && !PHONE.matches) ? b.imageWide : b.image, 'site', 'alt=""')}
     <div class="pg-bnr-in"><h2>${esc(b.title)}</h2>${b.text ? `<p>${esc(b.text)}</p>` : ''}${pgBtn(b, 'pg-btn pri')}</div>
   </section>`;
 }
